@@ -1,0 +1,20 @@
+{
+  "name": "retrieve-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanuelmassafera/retrieve-test.git"
+  },
+  "keywords": [],
+  "author": "Emanuel Massafera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emanuelmassafera/retrieve-test/issues"
+  },
+  "homepage": "https://github.com/emanuelmassafera/retrieve-test#readme"
+}
