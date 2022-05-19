@@ -20,11 +20,11 @@ Table of contents
 
 ## About <a name="-about-the-project" style="text-decoration:none"></a>
 
-This package aims to convert Magento 2 orders to be pushed to a different application, but unlike Magento, it uses an XML file instead of a JSON, and that XML file has a completely different format.
+The JSON to XML Converter package adapts Magento 2 orders to be pushed to a different application. This application expects an XML file as its input, while the Magento 2 orders are presented as JSON file with completely different formats.
 
-Basically, this NodeJS package performs the conversion based on a data mapping JSON file. This mapping file must contain the origin field and target field, and can contain a field to define if a value is static and what's the value and a convert function where you can write a basic js function to convert the value.
+Basically, the NodeJS Converter package performs the conversion based on a data mapping JSON file. This mapping file must contain origin and target fields, which links a JSON key to its respective XML tag. Moreover, the mapping file may present a field to define if the field is static and its respective value.  Lastly, the mapping can also define a JS conversion function, which transforms the captured value.
  
-Below you can see an example of a **mapping.json** file:
+Below, you can see an example of a **mapping.json** file:
 
 ```json
 [
@@ -45,7 +45,7 @@ Below you can see an example of a **mapping.json** file:
 ]
 ```
 
-The result is an XML file that follows the rules entered in the mapping file.
+The result is an XML file based on the rules from the mapping.
 
 ---
 
@@ -53,18 +53,18 @@ The result is an XML file that follows the rules entered in the mapping file.
 
 #### Prerequisites 
 
-To use the NodeJS package, you have to create a **.npmrm** file on your root directory and add the following lines: 
+To use the NodeJS package, you have to create a **.npmrc** file on your root directory and add the following lines: 
 
 ```
 @emanuelmassafera:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=YOUR_PERSONAL_TOKEN
+//npm.pkg.github.com/:_authToken=<YOUR_PERSONAL_TOKEN>
 ```
 
-The string *YOUR_PERSONAL_TOKEN* must be replaced with a personal token from GitHub. To generate it, follow the instructions in this [tutorial](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+The *<YOUR_PERSONAL_TOKEN>* string must be replaced with a personal token from GitHub. In order to generate this, please follow the instructions found in this [tutorial](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 #### Installation
 
-At this time you are able to install the package on your project. To do this, run the command:
+At this time you are ready to install the package on your project. To do this, run the command:
 
 ```bash
 npm install @emanuelmassafera/json-to-xml-converter@1.0.0
@@ -86,7 +86,7 @@ The three example files can be found in this repository: [order.json](https://gi
 
 ## Running the project <a name="-running" style="text-decoration:none"></a>
 
-If instead of using the package, you want to run the project, follow these steps:
+If you want to run the project instead of using the package, follow these steps:
 
 ```bash
 # Clone this repository
@@ -102,7 +102,7 @@ $ npm install
 $ npm start
 ```
 
-The start script will run an example present in the repository, passing the files present in the root.
+The start script will run an example present in the repository, passing the files found in the root.
 
 ---
 
