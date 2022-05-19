@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/emanuelmassafera/json-to-xml-converter/actions/workflows/node.js.yml/badge.svg)](https://github.com/emanuelmassafera/json-to-xml-converter/actions/workflows/node.js.yml)
+
 <h1 align="center">JSON to XML Converter</h1>
 
 <p align="center">📦 Package that converts Magento 2 orders from JSON  to XML 📦</p>
@@ -8,7 +10,8 @@ Table of contents
 =================
 <!--ts-->
    * [About](#-about-the-project)
-   * [How to run](#-how-to-run)
+   * [Using the package](#-using)
+   * [Running the project](#-running)
    * [Author](#-author)
    * [License](#-license)
 <!--te-->
@@ -46,7 +49,60 @@ The result is an XML file that follows the rules entered in the mapping file.
 
 ---
 
-## How to run <a name="-how-to-run" style="text-decoration:none"></a>
+## Using the package <a name="-using" style="text-decoration:none"></a>
+
+#### Prerequisites 
+
+To use the NodeJS package, you have to create a **.npmrm** file on your root directory and add the following lines: 
+
+```
+@emanuelmassafera:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=YOUR_PERSONAL_TOKEN
+```
+
+The string *YOUR_PERSONAL_TOKEN* must be replaced with a personal token from GitHub. To generate it, follow the instructions in this [tutorial](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+#### Installation
+
+At this time you are able to install the package on your project. To do this, run the command:
+
+```bash
+npm install @emanuelmassafera/json-to-xml-converter@1.0.0
+```
+
+#### Usage
+
+The JSON to XML Converter package by default exports a function that expects to receive three parameters: the origin file path, the result file path, and the mapping file path. Import the library into your code and use the function by passing your files.
+
+```js
+const convertIntoXML = require("@emanuelmassafera/json-to-xml-converter");
+
+convertIntoXML('order.json', 'result.xml', 'mapping.json');
+```
+
+The three example files can be found in this repository: [order.json](https://github.com/emanuelmassafera/json-to-xml-converter/blob/main/order.json), [result.xml](https://github.com/emanuelmassafera/json-to-xml-converter/blob/main/result.xml) and [mapping.json](https://github.com/emanuelmassafera/json-to-xml-converter/blob/main/mapping.json).
+
+---
+
+## Running the project <a name="-running" style="text-decoration:none"></a>
+
+If instead of using the package, you want to run the project, follow these steps:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/emanuelmassafera/json-to-xml-converter.git
+
+# Access the project folder via the terminal/cmd
+$ cd json-to-xml-converter
+
+# Install dependencies
+$ npm install
+
+# Run
+$ npm start
+```
+
+The start script will run an example present in the repository, passing the files present in the root.
 
 ---
 
