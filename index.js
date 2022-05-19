@@ -115,13 +115,15 @@ function reviewXML(xml) {
   return auxXML;
 }
 
-module.exports = function (originFilePath = './order.json', resultFilePath = './result.xml') {
+module.exports = function (originFilePath = './order.json', resultFilePath = './result.xml', mappingFilePath = './mapping.json') {
   if (!fs.existsSync(originFilePath)) throw new Error('The origin file does not exist');
+  if (!fs.existsSync(mappingFilePath)) throw new Error('The mapping file does not exist');
   if (path.extname(originFilePath) !== '.json') throw new Error('The origin file is not a JSON');
+  if (path.extname(mappingFilePath) !== '.json') throw new Error('The mapping file is not a JSON');
   if (path.extname(resultFilePath) !== '.xml') throw new Error('The result file is not a XML');
 
   const originData = JSON.parse(fs.readFileSync(originFilePath));
-  const mappingData = JSON.parse(fs.readFileSync('./mapping.json'));
+  const mappingData = JSON.parse(fs.readFileSync(mappingFilePath));
 
   let groupedData = {};
   mappingData.map((element) => {
