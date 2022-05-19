@@ -1,20 +1,23 @@
 {
-  "name": "retrieve-test",
+  "name": "json-to-xml-converter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@emanuelmassafera"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emanuelmassafera/retrieve-test.git"
+    "url": "git+https://github.com/emanuelmassafera/json-to-xml-converter.git"
   },
   "keywords": [],
   "author": "Emanuel Massafera",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emanuelmassafera/retrieve-test/issues"
+    "url": "https://github.com/emanuelmassafera/json-to-xml-converter/issues"
   },
-  "homepage": "https://github.com/emanuelmassafera/retrieve-test#readme"
+  "homepage": "https://github.com/emanuelmassafera/json-to-xml-converter#readme"
 }
